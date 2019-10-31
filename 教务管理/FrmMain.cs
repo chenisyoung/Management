@@ -13,6 +13,11 @@ namespace 教务管理
 {
     public partial class FrmMain : Form
     {
+        Form stuInfo = null;
+        Form frmTeacherInfo = null;
+        Form frmStuChaxun = null;
+        Form frmTeacherChaxun = null;
+
         bool isTeacher = false;
         StuBasicinfo student;
         TeacherInfo teacher;
@@ -23,9 +28,9 @@ namespace 教务管理
             InitializeComponent();
             if (user is TeacherInfo)
             {
-                teacher = (TeacherInfo)user;
+                this.teacher = (TeacherInfo)user;
                 isTeacher = true;
-                userName = teacher.teacherName;
+                userName = this.teacher.teacherName;
             }
             else
             {
@@ -41,6 +46,7 @@ namespace 教务管理
             string shenfen = isTeacher ? "老师" : "学生";
             // 显示在下方, label中
             // this.Text += $"     -- 当前用户 : {userName}, 身份 :  {shenfen}";
+            this.labelCurrent.Text += $"{userName}, 身份 :  {shenfen}";
         }
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -66,42 +72,108 @@ namespace 教务管理
         {
             // 可先定义变量, 每次点击判断是否为null, 再决定是否创建对象
             // this.IsMdiContainer = true;
-            Form frmStuInfo = new frmStuInfo();
-            // frmInfo.MdiParent = this;  mdi 文档式, 不好看
-            frmStuInfo.TopLevel = false;
-            frmStuInfo.Parent = this.panel1;
-            // 隐藏其他窗体
-            foreach (var item in panel1.Controls)
+            if (!isTeacher)
             {
-                if (item is Form)
+                if (null == this.stuInfo)
                 {
-                    if (item != frmStuInfo)
+                    this.stuInfo = new frmStuInfo(this.student);
+                    stuInfo.TopLevel = false;
+                    stuInfo.Parent = this.panel1;
+                }
+                // frmInfo.MdiParent = this;  mdi 文档式, 不好看
+                // 隐藏其他窗体
+                foreach (var item in panel1.Controls)
+                {
+                    if (item is Form)
                     {
-                        ((Form)item).Hide();
+                        if (item != this.stuInfo)
+                        {
+                            ((Form)item).Dispose();
+                        }
                     }
                 }
+                stuInfo.Show();
             }
-            frmStuInfo.Show();
+            else
+            {
+                if (null == this.frmTeacherInfo)
+                {
+                    this.frmTeacherInfo = new frmTeacherInfo(this.teacher);
+                    frmTeacherInfo.TopLevel = false;
+                    frmTeacherInfo.Parent = this.panel1;
+                }
+                // 关闭其他窗体
+                foreach (var item in panel1.Controls)
+                {
+                    if (item is Form)
+                    {
+                        if (item != this.frmTeacherInfo)
+                        {
+                            ((Form)item).Dispose();
+                        }
+                    }
+                }
+                frmTeacherInfo.Show();
+
+
+                //if (null == this.stuInfo)
+                //{
+                //    this.stuInfo = new frmStuInfo();
+                //    stuInfo.TopLevel = false;
+                //    stuInfo.Parent = this.panel1;
+                //}
+                //// 隐藏其他窗体
+                //foreach (var item in panel1.Controls)
+                //{
+                //    if (item is Form)
+                //    {
+                //        if (item != this.stuInfo)
+                //        {
+                //            ((Form)item).Dispose();
+                //        }
+                //    }
+                //}
+            }
+                // this.stuInfo.Show();
         }
 
         private void buttonCourseInfo_Click(object sender, EventArgs e)
         {
-            // this.IsMdiContainer = true;
-            Form frmCourseInfo = new frmCourseInfo();
-            // frmInfo.MdiParent = this;  mdi 文档式, 不好看
-            frmCourseInfo.TopLevel = false;
-            frmCourseInfo.Parent = this.panel1;
-            foreach (var item in panel1.Controls)
+            if (! isTeacher)
+                //学生查询窗口
             {
-                if (item is Form)
+                if (null == this.frmStuChaxun)
                 {
-                    if (item != frmCourseInfo)
+                    this.frmStuChaxun = new FormStuChaxun(this.student);
+                    frmStuChaxun.TopLevel = false;
+                    frmStuChaxun.Parent = this.panel1;
+                }
+                foreach (var item in panel1.Controls)
+                {
+                    if (item is Form)
                     {
-                        ((Form)item).Hide();
+                        if (item != this.frmStuChaxun)
+                        {
+                            ((Form)item).Dispose();
+                        }
                     }
                 }
+                frmStuChaxun.Show();
             }
-            frmCourseInfo.Show();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            // 退出登录
+            foreach (var item in  Application.OpenForms)
+            {
+                if (item is Login)
+                {
+                    ((Form)item).Show();
+                }
+            }
+            this.Dispose(true);
         }
     }
 }

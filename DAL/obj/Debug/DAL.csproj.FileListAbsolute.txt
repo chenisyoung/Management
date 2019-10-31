@@ -6,3 +6,11 @@ E:\数据库课程\窗体应用\DAL\obj\Debug\DAL.pdb
 E:\数据库课程\窗体应用\DAL\bin\Debug\MODEL.dll
 E:\数据库课程\窗体应用\DAL\bin\Debug\MODEL.pdb
 E:\数据库课程\窗体应用\DAL\obj\Debug\DAL.csproj.CopyComplete
+E:\数据库课程\窗体应用\Management\DAL\bin\Debug\DAL.dll
+E:\数据库课程\窗体应用\Management\DAL\bin\Debug\DAL.pdb
+E:\数据库课程\窗体应用\Management\DAL\bin\Debug\MODEL.dll
+E:\数据库课程\窗体应用\Management\DAL\bin\Debug\MODEL.pdb
+E:\数据库课程\窗体应用\Management\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+E:\数据库课程\窗体应用\Management\DAL\obj\Debug\DAL.csproj.CopyComplete
+E:\数据库课程\窗体应用\Management\DAL\obj\Debug\DAL.dll
+E:\数据库课程\窗体应用\Management\DAL\obj\Debug\DAL.pdb

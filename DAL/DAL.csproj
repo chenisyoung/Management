@@ -49,6 +49,8 @@
     <Compile Include="Services\LoginService.cs" />
     <Compile Include="Services\ScoreService.cs" />
     <Compile Include="Services\stuBasicInfoService.cs" />
+    <Compile Include="Services\TeacherInfoService.cs" />
+    <Compile Include="Services\UpdateService.cs" />
     <Compile Include="SqlHelper\SqlServerHelper.cs" />
   </ItemGroup>
   <ItemGroup>

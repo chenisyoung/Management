@@ -52,11 +52,17 @@
     <Compile Include="courseInfo.Designer.cs">
       <DependentUpon>courseInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGerenInfo.cs">
+    <Compile Include="FormStuChaxun.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGerenInfo.Designer.cs">
-      <DependentUpon>frmGerenInfo.cs</DependentUpon>
+    <Compile Include="FormStuChaxun.Designer.cs">
+      <DependentUpon>FormStuChaxun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStuInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStuInfo.Designer.cs">
+      <DependentUpon>frmStuInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -64,6 +70,7 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Limit.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,11 +79,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmTeacherInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTeacherInfo.Designer.cs">
+      <DependentUpon>frmTeacherInfo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="courseInfo.resx">
       <DependentUpon>courseInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGerenInfo.resx">
-      <DependentUpon>frmGerenInfo.cs</DependentUpon>
+    <EmbeddedResource Include="FormStuChaxun.resx">
+      <DependentUpon>FormStuChaxun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStuInfo.resx">
+      <DependentUpon>frmStuInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
@@ -93,6 +109,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmTeacherInfo.resx">
+      <DependentUpon>frmTeacherInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

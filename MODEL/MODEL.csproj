@@ -47,6 +47,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="score.cs" />
     <Compile Include="stuBasicinfo.cs" />
+    <Compile Include="StuKebiao.cs" />
     <Compile Include="teacherInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
