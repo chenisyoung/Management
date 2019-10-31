@@ -148,7 +148,7 @@
             this.textBoxCollege.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBoxCollege.Location = new System.Drawing.Point(115, 284);
             this.textBoxCollege.Name = "textBoxCollege";
-            this.textBoxCollege.Size = new System.Drawing.Size(100, 31);
+            this.textBoxCollege.Size = new System.Drawing.Size(199, 31);
             this.textBoxCollege.TabIndex = 1;
             // 
             // label6
@@ -167,7 +167,7 @@
             this.textBoxMajor.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBoxMajor.Location = new System.Drawing.Point(468, 285);
             this.textBoxMajor.Name = "textBoxMajor";
-            this.textBoxMajor.Size = new System.Drawing.Size(100, 31);
+            this.textBoxMajor.Size = new System.Drawing.Size(187, 31);
             this.textBoxMajor.TabIndex = 1;
             this.textBoxMajor.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
@@ -235,7 +235,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(852, 545);
             this.Controls.Add(this.buttonXiugai);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBoxShenfenzheng);

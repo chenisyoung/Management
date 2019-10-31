@@ -72,13 +72,13 @@
             this.labelCurrent.Size = new System.Drawing.Size(83, 15);
             this.labelCurrent.TabIndex = 0;
             this.labelCurrent.Text = "当前用户: ";
-            this.labelCurrent.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelLogout
             // 
             this.labelLogout.AutoSize = true;
             this.labelLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelLogout.ForeColor = System.Drawing.SystemColors.Highlight;
             this.labelLogout.Location = new System.Drawing.Point(285, 687);
             this.labelLogout.Name = "labelLogout";
             this.labelLogout.Size = new System.Drawing.Size(67, 15);

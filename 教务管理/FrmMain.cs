@@ -47,6 +47,11 @@ namespace 教务管理
             // 显示在下方, label中
             // this.Text += $"     -- 当前用户 : {userName}, 身份 :  {shenfen}";
             this.labelCurrent.Text += $"{userName}, 身份 :  {shenfen}";
+            if (!isTeacher)
+            {
+                this.buttonAdd.Enabled = false;
+                this.buttonAlter.Enabled = false;
+            }
         }
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -88,7 +93,9 @@ namespace 教务管理
                     {
                         if (item != this.stuInfo)
                         {
-                            ((Form)item).Dispose();
+                            //((Form)item).Dispose();
+                            //this.stuInfo = null;
+                            ((Form)item).Hide();
                         }
                     }
                 }
@@ -109,7 +116,8 @@ namespace 教务管理
                     {
                         if (item != this.frmTeacherInfo)
                         {
-                            ((Form)item).Dispose();
+                            ((Form)item).Hide();
+                            // this.frmTeacherInfo = null;
                         }
                     }
                 }
@@ -154,7 +162,7 @@ namespace 教务管理
                     {
                         if (item != this.frmStuChaxun)
                         {
-                            ((Form)item).Dispose();
+                            ((Form)item).Hide();
                         }
                     }
                 }
