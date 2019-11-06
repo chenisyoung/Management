@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Model;
 using DAL;
 
@@ -17,6 +14,7 @@ namespace BLL
                 "stu_name=@stu_name, stu_class=@stu_class, stu_gender=@stu_gender, stu_age=@stu_age," +
                 "stu_shengyuandi=@shengyuandi, stu_college=@stu_college, stu_major=@stu_major, stu_GKchengji=@GK," +
                 "stu_phoneNumber=@stu_phone, stu_guardian1=@stu_g1, stu_guardian2=@stu_g2 where ID=@ID";
+            // 添加参数
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("shenfenzheng", student.shenfenzheng));
             parameters.Add(new SqlParameter("stu_num", student.stuNum));
@@ -58,6 +56,11 @@ namespace BLL
 
             return DAL.Services.UpdateService.Update(sql, parameters.ToArray());
         }
+        /// <summary>
+        /// 更新老师信息参数
+        /// </summary>
+        /// <param name="teacher">老师对象，根据ID来更新老师信息</param>
+        /// <returns>int 受影响的行数</returns>
         public static int UpdateTeacher(TeacherInfo teacher)
         {
             string sql = "update teacher_info set "+
