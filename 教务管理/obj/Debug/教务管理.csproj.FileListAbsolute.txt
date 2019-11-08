@@ -38,3 +38,24 @@ E:\数据库课程\窗体应用\Management\教务管理\obj\Debug\教务管理.e
 E:\数据库课程\窗体应用\Management\教务管理\obj\Debug\教务管理.pdb
 E:\数据库课程\窗体应用\Management\教务管理\obj\Debug\教务管理.frmTeacherInfo.resources
 E:\数据库课程\窗体应用\Management\教务管理\obj\Debug\教务管理.FormStuChaxun.resources
+E:\数据库课程\窗体应用 - newer\Management\教务管理\bin\Debug\教务管理.exe.config
+E:\数据库课程\窗体应用 - newer\Management\教务管理\bin\Debug\教务管理.exe
+E:\数据库课程\窗体应用 - newer\Management\教务管理\bin\Debug\教务管理.pdb
+E:\数据库课程\窗体应用 - newer\Management\教务管理\bin\Debug\BLL.dll
+E:\数据库课程\窗体应用 - newer\Management\教务管理\bin\Debug\DAL.dll
+E:\数据库课程\窗体应用 - newer\Management\教务管理\bin\Debug\MODEL.dll
+E:\数据库课程\窗体应用 - newer\Management\教务管理\bin\Debug\BLL.pdb
+E:\数据库课程\窗体应用 - newer\Management\教务管理\bin\Debug\DAL.pdb
+E:\数据库课程\窗体应用 - newer\Management\教务管理\bin\Debug\MODEL.pdb
+E:\数据库课程\窗体应用 - newer\Management\教务管理\obj\Debug\教务管理.csprojAssemblyReference.cache
+E:\数据库课程\窗体应用 - newer\Management\教务管理\obj\Debug\教务管理.frmCourseInfo.resources
+E:\数据库课程\窗体应用 - newer\Management\教务管理\obj\Debug\教务管理.FormStuChaxun.resources
+E:\数据库课程\窗体应用 - newer\Management\教务管理\obj\Debug\教务管理.frmStuInfo.resources
+E:\数据库课程\窗体应用 - newer\Management\教务管理\obj\Debug\教务管理.FrmMain.resources
+E:\数据库课程\窗体应用 - newer\Management\教务管理\obj\Debug\教务管理.Login.resources
+E:\数据库课程\窗体应用 - newer\Management\教务管理\obj\Debug\教务管理.Properties.Resources.resources
+E:\数据库课程\窗体应用 - newer\Management\教务管理\obj\Debug\教务管理.frmTeacherInfo.resources
+E:\数据库课程\窗体应用 - newer\Management\教务管理\obj\Debug\教务管理.csproj.GenerateResource.cache
+E:\数据库课程\窗体应用 - newer\Management\教务管理\obj\Debug\教务管理.csproj.CopyComplete
+E:\数据库课程\窗体应用 - newer\Management\教务管理\obj\Debug\教务管理.exe
+E:\数据库课程\窗体应用 - newer\Management\教务管理\obj\Debug\教务管理.pdb

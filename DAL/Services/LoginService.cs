@@ -18,10 +18,10 @@ namespace DAL.Services
         /// <returns></returns>
         public StuBasicinfo StuLogin(StuBasicinfo stu)
         {
-            string sql = "select top 1 * from stu_basicinfo where stu_num = @stuNum";  //带参数的语句
-            SqlParameter para1 = new SqlParameter("stuNum", System.Data.SqlDbType.VarChar)
+            string sql = "select top 1 * from Student_Basic_Info where [Student ID] = @StudentID";  //带参数的语句
+            SqlParameter para1 = new SqlParameter("StudentID", System.Data.SqlDbType.VarChar)
             {
-                Value = stu.stuNum
+                Value = stu.StudentID
             };//参数
             SqlParameter[] paras = new SqlParameter[1];
             paras[0] = para1;
@@ -30,20 +30,22 @@ namespace DAL.Services
             if (sdr.Read())
             {
                 newStu.ID = (int)sdr["ID"];
-                newStu.shenfenzheng = (string)sdr["shenfenzheng"];
-                newStu.stuNum = (string)sdr["stu_num"];
-                newStu.stuName = (string)sdr["stu_name"];
-                newStu.stuClass = (string)sdr["stu_class"];
-                newStu.stuGender = (string)sdr["stu_gender"];
-                newStu.stuAge = (int)sdr["stu_age"];
-                newStu.stuShegnyuandi = (string)sdr["stu_shengyuandi"];
-                newStu.stuCollege = (string)sdr["stu_college"];
-                newStu.stuMajor = (string)sdr["stu_major"];
-                newStu.GKchengji = (decimal)sdr["stu_GKchengji"];
-                newStu.phoneNumber = (string)sdr["stu_phoneNumber"];
-                newStu.stuGuardian1 = (string)sdr["stu_guardian1"];
-                newStu.stuGuardian2 = (string)sdr["stu_guardian2"];
-                newStu.stu_pwd = (string)sdr["stu_pwd"];
+                newStu.IDNumber = (string)sdr["ID Number"];
+                newStu.StudentID = (string)sdr["Student ID"];
+                newStu.stuName = (string)sdr["Full name"];
+                newStu.stuClass = (string)sdr["Class"];
+                newStu.stuGender = (string)sdr["Gender"];
+                newStu.stuAge = (string)sdr["Age"];
+                newStu.BiogenicLand = sdr.GetString(7);
+                newStu.stuCollege = sdr.GetString(8);
+                newStu.stuMajor = sdr.GetString(9);
+                newStu.GKchengji = sdr.GetString(10);
+                newStu.phoneNumber = sdr.GetString(11);
+                newStu.stuGuardian1 = sdr.GetString(12);
+                newStu.stuGuardian2 = sdr.GetString(13);
+                newStu.Guar1PhoneNumber= sdr.GetString(14);
+                newStu.Guar2PhoneNumber= sdr.GetString(15);
+                newStu.stu_pwd = sdr.GetString(16);
             }
             else
             {
@@ -61,10 +63,10 @@ namespace DAL.Services
         }
         public TeacherInfo TeacherLogin(TeacherInfo teacher)
         {
-            string sql = "select top 1 * from teacher_info where t_number = @tNum";  //带参数的语句
+            string sql = "select top 1 * from Teacher_Info where [Job number] = @tNum";  //带参数的语句
             SqlParameter para1 = new SqlParameter("tNum", System.Data.SqlDbType.VarChar)
             {
-                Value = teacher.teacherNumber
+                Value = teacher.JobNumber
             };//参数
             SqlParameter[] paras = new SqlParameter[1];
             paras[0] = para1;
@@ -73,16 +75,16 @@ namespace DAL.Services
             if (sdr.Read())
             {
                 newTeacher.ID = (int)sdr["ID"];
-                newTeacher.shenfenzheng = (string)sdr["shenfenzheng"];
-                newTeacher.teacherGender = (string)sdr["t_gender"];
-                newTeacher.teacherAge = (int)sdr["t_age"];
-                newTeacher.teacherNumber = (string)sdr["t_number"];
-                newTeacher.teacherName = (string)sdr["t_name"];
-                newTeacher.teacherCollege = (string)sdr["t_collage"];
-                newTeacher.teacherMajor = (string)sdr["t_major"];
-                newTeacher.teacherOffice = (string)sdr["t_office"];
-                newTeacher.teacherPhoneNumber = (string)sdr["t_phonenumber"];
-                newTeacher.t_pwd = (string)sdr["t_pwd"];
+                newTeacher.shenfenzheng = (string)sdr["ID Number"];
+                newTeacher.teacherGender = (string)sdr["Gender"];
+                newTeacher.teacherAge = (string)sdr["Age"];
+                newTeacher.JobNumber= (string)sdr["Job number"];
+                newTeacher.teacherName = (string)sdr["Full Name"];
+                newTeacher.teacherCollege = (string)sdr["College"];
+                newTeacher.teacherMajor = (string)sdr["Major"];
+                newTeacher.teacherOffice = (string)sdr["Office Location"];
+                newTeacher.teacherPhoneNumber = (string)sdr["Phone Number"];
+                newTeacher.t_pwd = (string)sdr["password"];
             }
             else
             {

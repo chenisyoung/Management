@@ -67,7 +67,7 @@ namespace 教务管理
             {
                 TeacherInfo teacher = new TeacherInfo()
                 {
-                    teacherNumber = accu,
+                    JobNumber = accu,
                     t_pwd = pwd
                 };
                 try
@@ -99,7 +99,7 @@ namespace 教务管理
             {
                 StuBasicinfo student = new StuBasicinfo()
                 {
-                    stuNum = accu,
+                    StudentID = accu,
                     stu_pwd = pwd
                 };
                 try

@@ -16,19 +16,31 @@ namespace DAL.Services
         /// <returns>list<stubasicinfo></stubasicinfo></returns>
         public List<StuBasicinfo> GetStus()
         {
-            string sql = "select * from stu_basicinfo";
+            string sql = "select * from Student_Basic_Info";
             SqlDataReader sdr = SqlHelper.GetAllResult(sql); // 得到reader对象
             List<StuBasicinfo> students = new List<StuBasicinfo>();
             while (sdr.Read())
             {
-                StuBasicinfo newStu = new StuBasicinfo();
-                newStu.ID = (int)sdr["ID"];
-                newStu.shenfenzheng = (string)sdr["shenfenzheng"];
-                newStu.stuNum = (string)sdr["stu_num"];
-                newStu.stuName = (string)sdr["stu_name"];
-                newStu.stuClass = (string)sdr["stu_class"];
-
-                newStu.stu_pwd = (string)sdr["stu_pwd"];
+                StuBasicinfo newStu = new StuBasicinfo()
+                {
+                    ID = (int)sdr["ID"],
+                    IDNumber = (string)sdr["ID Number"],
+                    StudentID = (string)sdr["Student ID"],
+                    stuName = (string)sdr["Full name"],
+                    stuClass = (string)sdr["Class"],
+                    stuGender = (string)sdr["Gender"],
+                    stuAge = (string)sdr["Age"],
+                    BiogenicLand = (string)sdr["Biogenic Land"],
+                    stuCollege = (string)sdr["College"],
+                    stuMajor = (string)sdr["Major"],
+                    GKchengji = (string)sdr["NCEE Score"],
+                    phoneNumber = (string)sdr["Phone Number"],
+                    stuGuardian1 = (string)sdr["Name of Guardian 1"],
+                    stuGuardian2 = (string)sdr["Name of Guardian 2"],
+                    Guar1PhoneNumber = (string)sdr["Phone Number of Guardian 1"],
+                    Guar2PhoneNumber = (string)sdr["Phone Number of Guardian 2"],
+                    stu_pwd = (string)sdr["password"]
+                };
                 students.Add(newStu);
             }
             sdr.Close();

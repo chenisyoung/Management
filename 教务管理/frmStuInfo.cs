@@ -46,17 +46,17 @@ namespace 教务管理
         void initTextBox(StuBasicinfo studen)
         {
             this.textBoxName.Text = student.stuName;
-            this.textBoxNumber.Text = student.stuNum;
+            this.textBoxNumber.Text = student.StudentID;
             this.textBoxMajor.Text = student.stuMajor;
             this.textBoxage.Text = student.stuAge.ToString();
             this.textBoxClass.Text = student.stuClass;
             this.textBoxCollege.Text = studen.stuCollege;
             this.textBoxGKchengji.Text = studen.GKchengji.ToString();
-            this.textBoxShengyuandi.Text = studen.stuShegnyuandi.ToString();
+            this.textBoxShengyuandi.Text = studen.BiogenicLand.ToString();
             this.textBoxPhoneNumber.Text = studen.phoneNumber;
             this.textBoxGuardian1.Text = studen.stuGuardian1;
             this.textBoxGuardian2.Text = studen.stuGuardian2;
-            this.textBoxIDcard.Text = studen.shenfenzheng;
+            this.textBoxIDcard.Text = studen.IDNumber;
             this.comboBoxGender.SelectedIndex = Gender2Number(studen.stuGender);
 
             foreach (var item in this.Controls)
@@ -82,25 +82,45 @@ namespace 教务管理
             {
                 pwd = this.student.stu_pwd;
             }
-            string a = this.textBoxName.Text;
+            // 复制一个student对象
             StuBasicinfo student = new StuBasicinfo()
             {
-                stuName = this.textBoxName.Text,
-                stuNum = this.textBoxNumber.Text,
-                stuMajor = this.textBoxMajor.Text,
-                stuAge = Int32.Parse(this.textBoxage.Text),
-                stuClass = this.textBoxClass.Text,
-                stuCollege = this.textBoxCollege.Text,
-                GKchengji = Decimal.Parse(this.textBoxGKchengji.Text),
-                stuShegnyuandi = this.textBoxShengyuandi.Text,
-                phoneNumber = this.textBoxPhoneNumber.Text,
-                stuGuardian1 = this.textBoxGuardian1.Text,
-                stuGuardian2 = this.textBoxGuardian2.Text,
-                shenfenzheng = this.textBoxIDcard.Text,
-                stuGender = Number2Gender(this.comboBoxGender.SelectedIndex),
-                // 不更新项目
-                stu_pwd = pwd,
+                ID = this.student.ID,
+                IDNumber = this.student.IDNumber,
+                StudentID = this.student.StudentID,
+                stuName = this.student.stuName,
+                stuClass = this.student.stuClass,
+                stuGender = this.student.stuGender,
+                stuAge = this.student.stuAge,
+                BiogenicLand = this.student.BiogenicLand,
+                stuCollege = this.student.stuCollege,
+                stuMajor = this.student.stuMajor,
+                GKchengji = this.student.GKchengji,
+                phoneNumber = this.student.phoneNumber,
+                stuGuardian1 = this.student.stuGuardian1,
+                stuGuardian2 = this.student.stuGuardian2,
+                Guar1PhoneNumber = this.student.Guar1PhoneNumber,
+                Guar2PhoneNumber = this.student.Guar2PhoneNumber,
+                stu_pwd = this.student.stu_pwd
             };
+
+
+                student.stuName = this.textBoxName.Text;
+                student.StudentID = this.textBoxNumber.Text;
+                student.stuMajor = this.textBoxMajor.Text;
+                student.stuAge = this.textBoxage.Text;
+                student.stuClass = this.textBoxClass.Text;
+                student.stuCollege = this.textBoxCollege.Text;
+                student.GKchengji = this.textBoxGKchengji.Text;
+                student.BiogenicLand = this.textBoxShengyuandi.Text;
+                student.phoneNumber = this.textBoxPhoneNumber.Text;
+                student.stuGuardian1 = this.textBoxGuardian1.Text;
+                student.stuGuardian2 = this.textBoxGuardian2.Text;
+                student.IDNumber = this.textBoxIDcard.Text;
+                student.stuGender = Number2Gender(this.comboBoxGender.SelectedIndex);
+                // 不更新项目
+                student.stu_pwd = pwd;
+            
             if (! isAdd)
             {
                 student.ID = this.student.ID;
@@ -163,6 +183,7 @@ namespace 教务管理
                     }
                     this.buttonChangeInfo.Text = "确认修改";
                 }
+                this.textBoxNumber.Enabled = false; // 学号不能够更改
                 this.comboBoxGender.Enabled = true;
             }
             else
@@ -184,7 +205,7 @@ namespace 教务管理
                     StuBasicinfo stu = GetStuFromForm();
                     this.student = new StuBasicinfo()
                     {
-                        stuNum = stu.stuNum,
+                        StudentID = stu.StudentID,
                         stu_pwd = stu.stu_pwd
                     };
                     // 添加后不是修改

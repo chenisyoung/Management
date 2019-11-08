@@ -9,8 +9,8 @@ namespace Model
         public int ID { get; set; }
         public string shenfenzheng { get; set; }
         public string teacherGender { get; set; }
-        public int teacherAge { get; set; }
-        public string teacherNumber { get; set; }
+        public string teacherAge { get; set; }
+        public string JobNumber { get; set; }
         public string teacherName { get; set; }
         public string teacherCollege { get; set; }
         public string teacherMajor { get; set; }

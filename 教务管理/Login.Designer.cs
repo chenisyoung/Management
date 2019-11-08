@@ -72,7 +72,7 @@
             this.TextAccount.Name = "TextAccount";
             this.TextAccount.Size = new System.Drawing.Size(188, 27);
             this.TextAccount.TabIndex = 1;
-            this.TextAccount.Text = "1702110527";
+            this.TextAccount.Text = "1702110101";
             // 
             // TextPwd
             // 

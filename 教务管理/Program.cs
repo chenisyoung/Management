@@ -27,13 +27,13 @@ namespace 教务管理
         static void Test()
         {
             StuBasicinfo stu = new StuBasicinfo();
-            stu.stuNum = "1702110527";
+            stu.StudentID= "1702110527";
             stu.stu_pwd = "123456";
             LoginService ls = new LoginService();
             stu = ls.StuLogin(stu);
             TeacherInfo teacher = new TeacherInfo()
             {
-                teacherNumber = "1702110527",
+                JobNumber = "1702110527",
                 t_pwd = "123456"
             };
             teacher = ls.TeacherLogin(teacher);

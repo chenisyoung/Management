@@ -23,7 +23,7 @@ namespace 教务管理
 
         private void buttonGerenCourseInfo_Click(object sender, EventArgs e)
         {
-            List<StuKebiao> kbs = GetGerenKebiao.GetStuKebiao(this.student.stuNum);
+            List<StuKebiao> kbs = GetGerenKebiao.GetStuKebiao(this.student.StudentID);
             this.dataGridView.DataSource = kbs;
 
         }

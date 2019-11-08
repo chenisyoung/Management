@@ -37,7 +37,7 @@ namespace 教务管理
         }
         void InitModel()
         {
-            this.textBoxNum.Text = this.teacher.teacherNumber;
+            this.textBoxNum.Text = this.teacher.JobNumber;
             this.textBoxName.Text = this.teacher.teacherName;
             this.textBoxAge.Text = this.teacher.teacherAge.ToString();
             this.textBoxCollege.Text = this.teacher.teacherCollege;
@@ -162,7 +162,14 @@ namespace 教务管理
             else
             {
                 TeacherInfo teacher = GetTeacherFromForm();
-                int a = BLL.Update.UpdateTeacher(teacher);
+                try
+                {
+                    BLL.Update.UpdateTeacher(teacher);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("错误!" + ex.Message, "错误");
+                }
                 this.teacher = (new LoginService()).TeacherLogin(teacher);
                 InitModel();
                 this.buttonXiugai.Text = "修改信息";
@@ -175,8 +182,8 @@ namespace 教务管理
             {
                 shenfenzheng = this.textBoxShenfenzheng.Text,
                 teacherGender = Number2Gender(this.comboBox1.SelectedIndex),
-                teacherAge = Int32.Parse(this.textBoxAge.Text),
-                teacherNumber = this.textBoxNum.Text,
+                teacherAge = this.textBoxAge.Text,
+                JobNumber = this.textBoxNum.Text,
                 teacherName = this.textBoxName.Text,
                 teacherCollege = textBoxCollege.Text,
                 teacherMajor = textBoxMajor.Text,
